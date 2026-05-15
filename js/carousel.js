@@ -3,11 +3,23 @@
 //carousel
 
 //Array storage class
-let carouselArr = [ ];
+let carouselArr = [];
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+    
+        Carousel.Start(carouselArr);
+    });
 
 
 //class Carousel
-class Carousel {
+class Carousel { 
+
+    constructor (){
+        this.imagem
+        this.texto
+        this.link
+
+    }
 
     
       

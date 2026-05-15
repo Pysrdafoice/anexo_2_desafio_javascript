@@ -19,6 +19,34 @@ div#carousel {
     transition: all .3s ease-in-out;
 }
 
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.apresentacao1,
+.apresentacao > div {
+    width: 100%;
+    max-width: 800px;
+}
+
+.apresentacao img {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
+.apresentacao p,
+#carousel-title {
+    text-align: center;
+}
+
 div#carousel-title a {
     text-decoration: none;
 }
@@ -82,6 +110,32 @@ nav li {
 
 main {
     min-height: calc(100% - 167px);
+    position: relative;
+}
+
+.apresentacao {
+    position: relative;
+}
+
+.apresentacao button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1351d8;
+    color: #fff;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+button.butao_direito {
+    right: 10px;
+}
+
+button.butao_esquerdo {
+    left: 10px;
 }
 
 nav#social {

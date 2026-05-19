@@ -31,28 +31,16 @@
     </header>
     <main>
         <div class="apresentacao">
-            <button class="butao_direito">&#00094</button>
-            <button class="butao_esquerdo">&#00095</button>
+            <button class="butao_direito">&#10095</button>
 
-            <div class="apresentacao1">
-            <img src="img/imagem_1.jpg" id="primeira_imagem">
-            <p id="texto1">Esta é a nova Ranger Ford 2022. Verifique novidades.</p>
-            </div>
-            
-            <div class="apresentacao1">
-                <img src="img/imagem_2.jpg" id="segunda_imagem">
-                <p>Ford a nossa história</p>
-            </div>
-            
-            <div>
-                <img src="img/imagem_3.jpg" id="terceira_imagem">
-                <p>Nova Ford Bronco Sport 2022</p>
-            </div>
+            <div id="carousel"></div>
+
+            <button class="butao_esquerdo">&#10094</button>
 
         </div>
         <div id="carousel-title">
         </div>
-        <script src="carousel.js">
+        <script>
 
              //insert each image on carousel
             carouselArr.push(new Carousel("imagem_1.jpg","Esta é a nova Ranger Ford 2022. Verifique novidades.","lancamento.html"));

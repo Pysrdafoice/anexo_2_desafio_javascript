@@ -24,17 +24,23 @@ function Post(form) {
             form.elements.namedItem("telefone").value, 
             form.elements.namedItem("contato").value);
 
-            
-            console.table(data);
-             Enviar();
+            Enviar(data);
+            form.reset();
+            return false;
 }
 
 
-function Enviar() {
+function Enviar(data) {
+    let contatoValido = ["RECLAMAÇÃO", "ELOGIO", "OUTROS"];
 
-    let nome = document.getElementById("nomeid");
-    if (nome.value != "") {
-        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
+    if (!contatoValido.includes(data.contato)) {
+        alert('O campo COMO DESEJA SER CONTATADO deve ser preenchido com uma opção válida (RECLAMAÇÃO, ELOGIO ou OUTROS)');
+        return false;
+    }
+
+    if (data.nome != "") {
+        console.table(data);
+        alert('Obrigado sr(a) ' + data.nome + ' os seus dados foram encaminhados com sucesso');
     }
    
 }

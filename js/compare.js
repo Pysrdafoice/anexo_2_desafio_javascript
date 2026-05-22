@@ -63,11 +63,26 @@ function mostrarComparacao() {
   }
 
   atualizarTabelaComparacao();
-  document.getElementById('compare').style.display = 'block';
+  
+  const compareDiv = document.getElementById('compare');
+  
+  compareDiv.style.display = 'block';
+  
+  void compareDiv.offsetWidth;
+  
+  compareDiv.classList.add('show-compare');
 }
 
 function ocultarComparacao() {
-  document.getElementById('compare').style.display = 'none';
+  const compareDiv = document.getElementById('compare');
+  
+  compareDiv.classList.remove('show-compare');
+  
+  setTimeout(function() {
+    if (!compareDiv.classList.contains('show-compare')) {
+      compareDiv.style.display = 'none';
+    }
+  }, 400); 
 }
 
 function atualizarTabelaComparacao() {

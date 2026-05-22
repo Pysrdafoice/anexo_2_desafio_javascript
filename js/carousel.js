@@ -29,20 +29,30 @@ class Carousel {
         }
     }
 
-    static Mostrar() {
-        const item = Carousel._items[Carousel._sequence];
-        const container = document.getElementById('carousel');
-        const titleContainer = document.getElementById('carousel-title');
+static Mostrar(direcao) {
+    const item = Carousel._items[Carousel._sequence];
+    const container = document.getElementById('carousel');
+    const titleContainer = document.getElementById('carousel-title');
 
-        if (container && titleContainer) {
-            container.innerHTML = '<img src="img/' + item.image + '" alt="' + item.title + '" />';
-            titleContainer.textContent = item.title;
+    if (container && titleContainer) {
+        container.classList.remove('slide-in-right', 'slide-in-left');
+        
+        container.innerHTML = '<img src="img/' + item.image + '" alt="' + item.title + '" draggable="false" />';
+        titleContainer.textContent = item.title;
+        
+        void container.offsetWidth;
+        
+        if (direcao === 'direita') {
+            container.classList.add('slide-in-right');
+        } else if (direcao === 'esquerda') {
+            container.classList.add('slide-in-left');
         }
     }
+}
 
     static Proximo() {
         Carousel._sequence = (Carousel._sequence + 1) % Carousel._size;
-        Carousel.Mostrar();
+        Carousel.Mostrar('direita');
     }
 }
        
@@ -76,7 +86,7 @@ function botao_direito() {
     }
 
     Carousel._sequence = (Carousel._sequence + 1) % Carousel._size;
-    Carousel.Mostrar();
+    Carousel.Mostrar('direita'); 
     Carousel._interval = setInterval(function () { Carousel.Proximo(); }, 5000);
 }
 
@@ -90,7 +100,7 @@ function botao_esquerdo() {
     }
 
     Carousel._sequence = (Carousel._sequence - 1 + Carousel._size) % Carousel._size;
-    Carousel.Mostrar();
+    Carousel.Mostrar('esquerda');
     Carousel._interval = setInterval(function () { Carousel.Proximo(); }, 5000);
 }
 

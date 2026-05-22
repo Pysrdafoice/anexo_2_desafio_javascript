@@ -29,16 +29,14 @@ class Car {
   }
 }
 
-// search on array if exist carClass returning 1 if not return -1
-function GetCarArrPosition(arr, carClass) {
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].nome  === carClass.nome)
-            return i;
+function obterPosicaoCarroArray(arr, carClass) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].nome === carClass.nome) return i;
   }
   return -1;
 }
 
-function SetCarToCompare(el, carClass) {
+function definirCarroParaComparacao(el, carClass) {
   if (carClass instanceof Car) {
     if (el.checked) {
       if (carArr.length >= 2) {
@@ -48,7 +46,7 @@ function SetCarToCompare(el, carClass) {
       }
       carArr.push(carClass);
     } else {
-      let posicao = GetCarArrPosition(carArr, carClass);
+      let posicao = obterPosicaoCarroArray(carArr, carClass);
       if (posicao !== -1) {
         carArr.splice(posicao, 1);
       }
@@ -58,31 +56,28 @@ function SetCarToCompare(el, carClass) {
   }
 }
 
-function ShowCompare() {
+function mostrarComparacao() {
   if (carArr.length < 2) {
     alert('Precisa marcar 2 carros para apresentar a comparação');
     return;
   }
 
-  UpdateCompareTable();
+  atualizarTabelaComparacao();
   document.getElementById('compare').style.display = 'block';
 }
 
-function HideCompare() {
+function ocultarComparacao() {
   document.getElementById('compare').style.display = 'none';
 }
 
-function UpdateCompareTable() {
-
-    for (let i = 0; i < carArr.length; i++) {
-
+function atualizarTabelaComparacao() {
+  for (let i = 0; i < carArr.length; i++) {
     let imgElement = document.createElement('img');
     imgElement.src = carArr[i].image;
     imgElement.style.width = '100%';
     document.getElementById('compare_image_' + i).innerHTML = '';
     document.getElementById('compare_image_' + i).appendChild(imgElement);
 
-    
     document.getElementById('compare_modelo_' + i).textContent = carArr[i].nome;
 
     document.getElementById('compare_alturacacamba_' + i).textContent =

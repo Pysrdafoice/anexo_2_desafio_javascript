@@ -192,6 +192,21 @@ button {
   border-radius: 10px;
 }
 
+p {
+  font-size: small;
+  margin: 10px 0px 10px 8px
+}
+
+.LGPD{
+  margin: 2%;
+}
+.concordo{
+  margin: 2%;
+}
+.Enviar{
+  float: left;
+  margin-top: 2%;
+}
 #compare {
   display: none;
   opacity: 0;

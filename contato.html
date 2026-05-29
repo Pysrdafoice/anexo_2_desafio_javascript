@@ -48,11 +48,21 @@
                     <option>RECLAMAÇÃO</option>
                     <option>SOLICITAÇÃO</option>
                     <option>OUTROS</option>
+                </select>
                 <input type="text" name="Escreva" placeholder="Escreva" class="fordform" required>
 
+            <label>
+                <p>Os dados serão mantidos em nossa base de dados,
+                <br> só enquanto for desejado por você.
+                <br> A qualquer momento, será possível editar ou remover tais dados. <br>
+                <a class="termo" href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e Condições<br></a>
 
-                </select>
-            <button type="submit">Enviar</button>
+                </p>
+                <input type="checkbox" name="LGPD" class="LGPD" required>Sim. Li e concordo com os Termos e Condições. <br>
+                <input type="checkbox" name="Concordo" class="concordo" >Sim. Também quero receber descontos e novidades. <br>
+            </label>
+
+            <button class="Enviar" type="submit">Enviar</button>
             </form>
             </div>
         </div>

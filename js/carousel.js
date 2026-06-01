@@ -38,8 +38,7 @@ static Mostrar(direcao) {
         container.classList.remove('slide-in-right', 'slide-in-left');
         
         container.innerHTML = '<img src="img/' + item.image + '" alt="' + item.title + '" draggable="false" />';
-        titleContainer.textContent = item.title;
-        
+        titleContainer.innerHTML = '<a href="' + item.link + '" class="carousel-link">' + item.title + '</a>';
         void container.offsetWidth;
         
         if (direcao === 'direita') {

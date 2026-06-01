@@ -190,22 +190,35 @@ button {
   color: #fff;
   border: 0px;
   border-radius: 10px;
+  transition: all 0.3s ease; 
 }
 
 p {
   font-size: small;
+  width: 300px;
   margin: 10px 0px 10px 8px
 }
 
-.LGPD{
-  margin: 2%;
+.LGPD, .concordo {
+  font-size: small;
+  display: inline-block;
+  margin: 5px 0;
+  cursor: pointer;
 }
-.concordo{
-  margin: 2%;
+
+/* Remove margens exageradas dos inputs do tipo checkbox */
+.LGPD input[type="checkbox"], 
+.concordo input[type="checkbox"] {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
 }
-.Enviar{
+.Enviar:disabled{
   float: left;
   margin-top: 2%;
+  background-color: #007bff;
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;  
 }
 #compare {
   display: none;

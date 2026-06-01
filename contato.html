@@ -37,32 +37,36 @@
             </div>
             <div>
                 <h2 class="titulo">Sobre Você</h2>
-            <form onsubmit="Post(this);">
+            <form id="lgpd-form" onsubmit="Post(this);">
                 <input id="nomeid" type="text" name="nome" placeholder="NOME*" class="fordform" required>
                 <input type="text" name="sobrenome" placeholder="SOBRENOME*" class="fordform" required>
-                <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
+                <input type="email" name="email" placeholder="E-MAIL*" class="fordform" required>
                 <input type="text" name="cpf" placeholder="CPF*" class="fordform" required>
                 <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
                 <select name="contato" class="fordform" required>
-                    <option selected>COMO DESEJA SER CONTATADO</option>
-                    <option>RECLAMAÇÃO</option>
-                    <option>SOLICITAÇÃO</option>
-                    <option>OUTROS</option>
+                    <option value ="" selected>COMO DESEJA SER CONTATADO</option>
+                    <option value ="RECLAMAÇÃO">RECLAMAÇÃO</option>
+                    <option value ="SOLICITAÇÃO">SOLICITAÇÃO</option>
+                    <option value ="OUTROS  ">OUTROS</option>
                 </select>
                 <input type="text" name="Escreva" placeholder="Escreva" class="fordform" required>
+           
+            <p class="texto-privacidade">
+            Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. 
+            A qualquer momento, será possível editar ou remover tais dados.
+            <a href="https://www.ford.com.br/politica-de-privacidade/ " target="_blank">Termos e Condições</a>
+            <label class="LGPD">
+            <input type="checkbox" required> Sim, li e concordo com os vossos termos. <br>
+        </label>
+        <label class="concordo">
+            <input type="checkbox"> Sim, também quero receber descontos e novidades. <br>
+        </label>
+        </p>
 
-            <label>
-                <p>Os dados serão mantidos em nossa base de dados,
-                <br> só enquanto for desejado por você.
-                <br> A qualquer momento, será possível editar ou remover tais dados. <br>
-                <a class="termo" href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e Condições<br></a>
-
-                </p>
-                <input type="checkbox" name="LGPD" class="LGPD" required>Sim. Li e concordo com os Termos e Condições. <br>
-                <input type="checkbox" name="Concordo" class="concordo" >Sim. Também quero receber descontos e novidades. <br>
-            </label>
-
-            <button class="Enviar" type="submit">Enviar</button>
+        
+        
+        
+        <button id="Enviar" class="Enviar" type="submit" disabled> Enviar</button>
             </form>
             </div>
         </div>
